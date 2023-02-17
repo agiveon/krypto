@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from google.oauth2 import service_account
 import random
+from streamlit.report_thread import get_report_ctx
+from streamlit.server.server import Server
+import SessionState
 
 CARD_WIDTH = 100
 
@@ -50,10 +53,22 @@ def pick_cards():
 #     cards = pick_cards()
 #     display_cards(cards)
 
-# Show button 1
-if st.button('Button 1'):
-    st.write('Hello 1')
 
-    # Show button 2
-    if st.button('Button 2'):
-        st.write('Hello 2', key='hello2')
+
+def main():
+    state = SessionState.get(button2_clicked=False)
+
+    # Show button 1
+    if st.button('Button 1'):
+        st.write('Hello 1')
+
+        # Show button 2
+        if st.button('Button 2'):
+            state.button2_clicked = True
+
+    # Show "Hello 2" message if button 2 is clicked
+    if state.button2_clicked:
+        st.write('Hello 2')
+
+if __name__ == '__main__':
+    main()

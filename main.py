@@ -53,6 +53,12 @@ if st.session_state["new_game"]:
     cards = pick_cards()
     display_cards(cards)
 
+    if st.button("Show solution"):
+        st.session_state["show_solution"] = True
+
+if st.session_state["show_solution"]:
+    st.write('solution here')
+
 # if st.button('New cards'):
 #     st.experimental_rerun()
 

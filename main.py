@@ -47,3 +47,5 @@ def pick_cards():
 if st.button('New Cards'):
     cards = pick_cards()
     display_cards(cards)
+    if st.button('I give up, show me the solution'):
+        st.write('solution goes here')

@@ -74,6 +74,8 @@ if "button2" not in st.session_state:
 if st.button("Button1"):
     st.session_state["button1"] = True
     st.session_state["button2"] = False
+    cards = pick_cards()
+    display_cards(cards)
 
 if st.session_state["button1"] and st.button("Button2"):
     st.session_state["button2"] = True

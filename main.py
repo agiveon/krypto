@@ -6,7 +6,7 @@ import random
 
 CARD_WIDTH = 100
 
-report_ctx = st.beta_get_report_ctx()
+report_ctx = st.get_report_ctx()
 if report_ctx:
     max_width = report_ctx.max_width
     st.write("Client screen width:", max_width)

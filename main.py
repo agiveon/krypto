@@ -89,8 +89,6 @@ st.write(
     {st.session_state["button1"]=}
 
     {st.session_state["button2"]=}
-
-    {st.session_state["button3"]=}
     """
 )
 

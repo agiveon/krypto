@@ -4,8 +4,6 @@ import numpy as np
 from google.oauth2 import service_account
 import random
 
-CARD_WIDTH = 100
-
 st.write('''<style>
 
 [data-testid="column"] {

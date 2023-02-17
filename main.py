@@ -80,9 +80,10 @@ def find_solution(cards, max_trials=10000):
 
 def find_cards_with_solution():
     solotion = None
-    while not solotion:
+    while solotion==None:
         cards = pick_cards()
         solution = find_solution(cards)
+    
     return cards,solution
 
 

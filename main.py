@@ -44,11 +44,11 @@ def pick_cards():
     return random.sample(cards, 6)
 
 
-deal_cards = st.button('New Cards')
+# deal_cards = st.button('New Cards')
 
-if deal_cards:
-    cards = pick_cards()
-    display_cards(cards)
+# if deal_cards:
+#     cards = pick_cards()
+#     display_cards(cards)
 
 # Show button 1
 if st.button('Button 1'):

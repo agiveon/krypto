@@ -24,7 +24,8 @@ with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
 
-
+st.write("")
+st.write("")
 st.subheader('to reach:')
 # Add a card to each column
 col1, col2, col3, col4, col5 = st.columns(5)

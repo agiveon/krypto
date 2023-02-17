@@ -56,4 +56,4 @@ if st.button('Button 1'):
 
     # Show button 2
     if st.button('Button 2'):
-        st.write('Hello 2', unsafe_allow_html=True)
+        st.write('Hello 2', key='hello2')

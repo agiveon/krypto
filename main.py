@@ -65,6 +65,9 @@ def pick_cards():
 # if st.button('New cards'):
 #     st.experimental_rerun()
 
+if st.button('Reload'):
+    st.experimental_rerun()
+
 if "button1" not in st.session_state:
     st.session_state["button1"] = False
 

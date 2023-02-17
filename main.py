@@ -86,7 +86,7 @@ if st.session_state["button1"] and st.session_state["button2"]:
         # toggle button3 session state
         st.session_state["button3"] = not st.session_state["button3"]
 
-if st.session_state["button3"]:
+if st.session_state["button1"] and st.session_state["button2"] and st.session_state["button3"]:
     st.write("**Button3!!!**")
 
 

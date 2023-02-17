@@ -44,7 +44,7 @@ def pick_cards():
     return random.sample(cards, 6)
 
 
-if st.button('Reload'):
+if st.button('New cards'):
     st.experimental_rerun()
 
 # deal_cards = st.button('New Cards')
@@ -52,6 +52,11 @@ if st.button('Reload'):
 # if deal_cards:
 cards = pick_cards()
 display_cards(cards)
+
+if st.button('I give up, show me the solution'):
+    st.write('solution')
+
+
 
 # if "button1" not in st.session_state:
 #     st.session_state["button1"] = False

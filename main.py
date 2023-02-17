@@ -43,11 +43,11 @@ def pick_cards():
     # Pick 6 cards from the deck
     return random.sample(cards, 6)
 
-if "new_game" not in st.session_state:
-    st.session_state["new_game"] = False
+# if "new_game" not in st.session_state:
+st.session_state["new_game"] = False
 
-if "show_solution" not in st.session_state:
-    st.session_state["show_solution"] = False
+# if "show_solution" not in st.session_state:
+st.session_state["show_solution"] = False
 
 if st.button("New Cards"):
     st.session_state["new_game"] = True

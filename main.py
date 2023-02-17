@@ -23,13 +23,10 @@ with col4:
 with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
-# create a container for the image
-container = st.beta_container()
+col1, col2, col3, col4, col5 = st.columns(5)
 
-# add the image to the container
-with container:
-    st.image("cards/1.jpg", use_column_width=True)
+st.title('Goal:')
+# Add a card to each column
+with col3:
+    st.image("cards/1.jpg", width=CARD_WIDTH*2)
 
-# center the container in the row
-
-st.beta_columns([1, 1, 1])[1].write(container)

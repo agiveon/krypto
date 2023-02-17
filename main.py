@@ -44,8 +44,12 @@ def pick_cards():
     return random.sample(cards, 6)
 
 
-if st.button('New Cards'):
+deal_cards = st.button('New Cards')
+
+if deal_cards:
     cards = pick_cards()
     display_cards(cards)
-    if st.button('I give up, show me the solution'):
-        st.write('solution goes here')
+    give_up = st.button('I give up, show me the solution')
+
+if deal_cards and give_up:
+    st.write('solution goes here')

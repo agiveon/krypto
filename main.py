@@ -13,7 +13,7 @@ def display_cards(cards):
     col1, col2, col3, col4, col5 = st.columns(5)
     # Add a card to each column
     with col1:
-        st.image(f"cards/{cards[0]}.jpg", width="%15")
+        st.image(f"cards/{cards[0]}.jpg", width="15%")
     with col2:
         st.image(f"cards/{cards[1]}.jpg", width=CARD_WIDTH)
     with col3:

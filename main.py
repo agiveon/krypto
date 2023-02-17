@@ -44,68 +44,61 @@ def pick_cards():
     return random.sample(cards, 6)
 
 # if "new_game" not in st.session_state:
-st.session_state["new_game"] = False
+#     st.session_state["new_game"] = False
 
 # if "show_solution" not in st.session_state:
-st.session_state["show_solution"] = False
+#     st.session_state["show_solution"] = False
 
-if st.button("New Cards"):
-    st.session_state["new_game"] = True
+# if st.button("New Cards"):
+#     st.session_state["new_game"] = not st.session_state["new_game"]
 
-if st.session_state["new_game"]:
-    cards = pick_cards()
-    display_cards(cards)
+# if st.session_state["new_game"]:
+#     cards = pick_cards()
+#     display_cards(cards)
 
-    if st.button("Show solution"):
-        st.session_state["show_solution"] = True
+#     if st.button("Show solution"):
+#         st.session_state["show_solution"] = True
 
-if st.session_state["show_solution"]:
-    st.write('solution here')
+# if st.session_state["show_solution"]:
+#     st.write('solution here')
 
 # if st.button('New cards'):
 #     st.experimental_rerun()
 
-# deal_cards = st.button('New Cards')
+if "button1" not in st.session_state:
+    st.session_state["button1"] = False
 
-# if deal_cards:
+if "button2" not in st.session_state:
+    st.session_state["button2"] = False
 
+if "button3" not in st.session_state:
+    st.session_state["button3"] = False
 
-# if st.button('I give up, show me the solution'):
-#     st.write('solution')
+if st.button("Button1"):
+    st.session_state["button1"] = not st.session_state["button1"]
 
+if st.session_state["button1"]:
+    if st.button("Button2"):
+        st.session_state["button2"] = not st.session_state["button2"]
 
+if st.session_state["button1"] and st.session_state["button2"]:
+    if st.button("Button3"):
+        # toggle button3 session state
+        st.session_state["button3"] = not st.session_state["button3"]
 
-# if "button1" not in st.session_state:
-
-
-# if "button2" not in st.session_state:
-# st.session_state["button2"] = False
-
-
-# if st.button("New Cards"):
-#     # st.session_state["button1"] = not st.session_state["button1"]
-#     st.session_state["button1"] = True
-
-#     cards = pick_cards()
-#     display_cards(cards)
-
-# if st.session_state["button1"]:
-#     if st.button("Button2"):
-#         st.session_state["button2"] = not st.session_state["button2"]
-
-# if st.session_state["button2"] and st.session_state["button1"]:
-#     st.write("**Button2!!!**")
+if st.session_state["button3"]:
+    st.write("**Button3!!!**")
 
 
 # Print the session state to make it easier to see what's happening
 st.write(
     f"""
     ## Session state:
-    {st.session_state["new_game"]=}
+    {st.session_state["button1"]=}
 
-    {st.session_state["show_solution"]=}
+    {st.session_state["button2"]=}
 
+    {st.session_state["button3"]=}
     """
 )
-
 

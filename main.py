@@ -49,28 +49,6 @@ def pick_cards():
     # Pick 6 cards from the deck
     return random.sample(cards, 6)
 
-# if "new_game" not in st.session_state:
-#     st.session_state["new_game"] = False
-
-# if "show_solution" not in st.session_state:
-#     st.session_state["show_solution"] = False
-
-# if st.button("New Cards"):
-#     st.session_state["new_game"] = not st.session_state["new_game"]
-
-# if st.session_state["new_game"]:
-#     cards = pick_cards()
-#     display_cards(cards)
-
-#     if st.button("Show solution"):
-#         st.session_state["show_solution"] = True
-
-# if st.session_state["show_solution"]:
-#     st.write('solution here')
-
-# if st.button('New cards'):
-#     st.experimental_rerun()
-
 if "new_game" not in st.session_state:
     st.session_state["new_game"] = False
 

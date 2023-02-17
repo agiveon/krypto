@@ -94,15 +94,15 @@ if st.session_state["show_solution"]:
 #     st.write("**Button2!!!**")
 
 
-# # Print the session state to make it easier to see what's happening
-# st.write(
-#     f"""
-#     ## Session state:
-#     {st.session_state["button1"]=}
+# Print the session state to make it easier to see what's happening
+st.write(
+    f"""
+    ## Session state:
+    {st.session_state["new_game"]=}
 
-#     {st.session_state["button2"]=}
+    {st.session_state["show_solution"]=}
 
-#     """
-# )
+    """
+)
 
 

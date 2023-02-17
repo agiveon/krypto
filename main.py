@@ -26,3 +26,15 @@ with col5:
 with st.beta_container():
     st.title("Goal:")
     st.image("cards/1.jpg", width=CARD_WIDTH*2, use_column_width=True)
+    st.markdown(
+        """
+        <style>
+        .stImage > img {
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )

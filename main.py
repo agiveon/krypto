@@ -6,6 +6,12 @@ import random
 
 CARD_WIDTH = 100
 
+report_ctx = st.beta_get_report_ctx()
+if report_ctx:
+    max_width = report_ctx.max_width
+    st.write("Client screen width:", max_width)
+else:
+    st.write("Not running on Streamlit")
 
 def display_cards(cards):
 

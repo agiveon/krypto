@@ -9,7 +9,7 @@ import pickle
 
 CARD_WIDTH = 100
 
-col1, col2, col3, col4, col5 = st.beta_columns(5)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 # Add a card to each column
 with col1:
@@ -23,7 +23,7 @@ with col4:
 with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
-with st.beta_container():
+with st.container():
     st.title("Goal:")
     st.image("cards/1.jpg", width=CARD_WIDTH*2, use_column_width=True)
     st.markdown(

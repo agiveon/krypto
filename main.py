@@ -47,7 +47,7 @@ st.session_state["new_game"] = False
 st.session_state["show_solution"] = False
 
 if st.button("New Cards"):
-    st.session_state["new_cards"] = True
+    st.session_state["new_game"] = True
 
 if st.session_state["new_game"]:
     cards = pick_cards()

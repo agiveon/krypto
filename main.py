@@ -50,7 +50,7 @@ def pick_cards():
     # Pick 6 cards from the deck
     return random.sample(cards, 6)
 
-def find_solution(cards, max_trials=10000):
+def find_solution(cards, max_trials=1000):
     nums = cards[:5]
     g1 = cards[5]
     ops = ['+', '-', '*', '/']
@@ -69,7 +69,7 @@ def find_solution(cards, max_trials=10000):
                                 if '- ' not in expr and '-(' not in expr:
                                     try:
                                         result = eval(expr)
-                                        if result == g1:
+                                        if result == g1 and 0 not in nums_perm:
                                             return expr
                                     except:
                                         pass
@@ -79,10 +79,11 @@ def find_solution(cards, max_trials=10000):
     return None
 
 def find_cards_with_solution():
-    solotion = None
-    while solotion==None:
+    while True:
         cards = pick_cards()
         solution = find_solution(cards)
+        if solution != None:
+          break
     
     return cards,solution
 

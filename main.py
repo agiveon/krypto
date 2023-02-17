@@ -64,7 +64,7 @@ if st.session_state["button1"]:
     if st.button("Button2"):
         st.session_state["button2"] = not st.session_state["button2"]
 
-if st.session_state["button2"]:
+if st.session_state["button2"] and st.session_state["button1"]:
     st.write("**Button2!!!**")
 
 

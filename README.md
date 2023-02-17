@@ -1,1 +1,1 @@
-# krypto
+A mathematical game that promotes proficiency with basic arithmetic operations

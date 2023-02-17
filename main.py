@@ -5,6 +5,8 @@ from google.oauth2 import service_account
 import random
 import itertools
 
+st.set_page_config(page_title="Krypto - The Math Game")
+
 st.write('''<style>
 
 [data-testid="column"] {

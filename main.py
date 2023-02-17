@@ -24,19 +24,19 @@ with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
 with st.container():
-    st.title("Goal:")
-    st.image("cards/1.jpg", width=CARD_WIDTH*2, use_column_width=False)
+    st.title("Last Card")
+    st.image("cards/1.jpg", width=CARD_WIDTH, use_column_width=False)
 
-# Center the last card using CSS
-st.markdown(
-    """
-    <style>
+    # Center the image using CSS
+    st.markdown(
+        """
+        <style>
         .stImage > img {
-            max-width: 100%;
             display: block;
-            margin: auto;
+            margin: 0 auto;
+            text-align: center;
         }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        </style>
+        """,
+        unsafe_allow_html=True
+    )

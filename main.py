@@ -106,7 +106,7 @@ if st.session_state["new_game"] and st.button("show_solution"):
     
 if st.session_state["new_game"] and st.session_state["show_solution"]:
     display_cards(st.session_state["cards"])
-    st.write("solution")
+    st.write(solution)
 
 # Print the session state to make it easier to see what's happening
 # st.write(

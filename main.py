@@ -7,23 +7,21 @@ import random
 CARD_WIDTH = 100
 
 
-def display_cards():
-
-    numbers = random.sample(range(1, 7), 6)
+def display_cards(cards):
 
     st.subheader('Use all these cards:')
     col1, col2, col3, col4, col5 = st.columns(5)
     # Add a card to each column
     with col1:
-        st.image(f"cards/{numbers[0]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[0]}.jpg", width=CARD_WIDTH)
     with col2:
-        st.image(f"cards/{numbers[1]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[1]}.jpg", width=CARD_WIDTH)
     with col3:
-        st.image(f"cards/{numbers[2]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[2]}.jpg", width=CARD_WIDTH)
     with col4:
-        st.image(f"cards/{numbers[3]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[3]}.jpg", width=CARD_WIDTH)
     with col5:
-        st.image(f"cards/{numbers[4]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[4]}.jpg", width=CARD_WIDTH)
 
     st.write("")
     st.write("")
@@ -31,7 +29,21 @@ def display_cards():
     # Add a card to each column
     col1, col2, col3, col4, col5 = st.columns(5)
     with col3:
-        st.image(f"cards/{numbers[5]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[5]}.jpg", width=CARD_WIDTH)
+
+def pick_cards():
+    # Create a list of cards with the specified probabilities
+    cards = [i for i in range(1, 11) for _ in range(3)]
+    cards += [i for i in range(11, 18) for _ in range(2)]
+    cards += [i for i in range(18, 25)]
+
+    # Shuffle the deck
+    random.shuffle(cards)
+
+    # Pick 6 cards from the deck
+    return random.sample(cards, 6)
+
 
 if st.button('New Cards'):
-    display_cards()
+    cards = pick_cards()
+    display_cards(cards)

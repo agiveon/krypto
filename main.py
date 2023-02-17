@@ -75,13 +75,14 @@ if st.button("new_game"):
     st.session_state["new_game"] = True
     st.session_state["show_solution"] = False
     cards = pick_cards()
+    st.session_state["cards"] = cards
     display_cards(cards)
 
 if st.session_state["new_game"] and st.button("show_solution"):
     st.session_state["show_solution"] = True
     
 if st.session_state["new_game"] and st.session_state["show_solution"]:
-    display_cards(cards)
+    display_cards(st.session_state["cards"])
     st.write("SOLUTION GOES HERE")
 
 # Print the session state to make it easier to see what's happening

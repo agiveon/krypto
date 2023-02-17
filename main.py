@@ -4,7 +4,7 @@ import numpy as np
 from google.oauth2 import service_account
 import random
 
-CARD_WIDTH = 0.15
+CARD_WIDTH = 15
 
 
 def display_cards(cards):
@@ -13,7 +13,7 @@ def display_cards(cards):
     col1, col2, col3, col4, col5 = st.columns(5)
     # Add a card to each column
     with col1:
-        st.image(f"cards/{cards[0]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[0]}.jpg", width=f'CARD_WIDTH%')
     with col2:
         st.image(f"cards/{cards[1]}.jpg", width=CARD_WIDTH)
     with col3:

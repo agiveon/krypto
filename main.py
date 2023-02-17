@@ -29,22 +29,13 @@ with st.beta_container():
 
 # Center the last card using CSS
 st.markdown(
-    f"""
+    """
     <style>
-        div.stV {{
-
-            display: flex;
-            justify-content: center;
-
-        }}
-        div.stV > div {{
-            display: flex;
-            justify-content: center;
-        }}
-        div.stV > div > div > div.stImage {{
-            margin: 0 auto;
-            text-align: center;
-        }}
+        .stImage > img {
+            max-width: 100%;
+            display: block;
+            margin: auto;
+        }
     </style>
     """,
     unsafe_allow_html=True

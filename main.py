@@ -9,7 +9,7 @@ import pickle
 
 CARD_WIDTH = 100
 
-st.title('Use all these cards:')
+st.subheader('Use all these cards:')
 col1, col2, col3, col4, col5 = st.columns(5)
 # Add a card to each column
 with col1:
@@ -25,7 +25,7 @@ with col5:
 
 
 
-st.title('to reach:')
+st.subheader('to reach:')
 # Add a card to each column
 col1, col2, col3, col4, col5 = st.columns(5)
 with col3:

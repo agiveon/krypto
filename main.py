@@ -56,8 +56,4 @@ if st.button('Button 1'):
 
     # Show button 2
     if st.button('Button 2'):
-        # Create a placeholder for the "Hello 2" message
-        hello2_placeholder = st.empty()
-
-        # Display the "Hello 2" message when the button is clicked
-        hello2_placeholder.write('Hello 2')
+        st.write('Hello 2', unsafe_allow_html=True)

@@ -109,6 +109,7 @@ if st.session_state["new_game"] and st.button("show_solution"):
     
 if st.session_state["new_game"] and st.session_state["show_solution"]:
     display_cards(st.session_state["cards"])
+    st.subheader('One possible solution:')
     st.write(st.session_state["solution"])
 
 # Print the session state to make it easier to see what's happening

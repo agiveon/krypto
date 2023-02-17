@@ -50,39 +50,32 @@ def pick_cards():
     # Pick 6 cards from the deck
     return random.sample(cards, 6)
 
-def find_solution(cards, max_trials=1000):
-    # Generate all possible permutations of the 5 integers and all possible
-    # combinations of the basic arithmetic operations.
+def find_solution(cards, max_trials=10000):
     nums = cards[:5]
-    goal = cards[5]
+    g1 = cards[5]
     ops = ['+', '-', '*', '/']
     exprs = []
     for nums_perm in itertools.permutations(nums):
         for ops_comb in itertools.product(ops, repeat=4):
-            # Try all possible combinations of parentheses.
             for i in range(2):
                 for j in range(2):
                     for k in range(2):
                         for l in range(2):
                             if i + j + k + l == 3:
-                                expr = f'({nums_perm[0]}{ops_comb[0]}{nums_perm[1]})' if i == 1 else f'{nums_perm[0]}{ops_comb[0]}{nums_perm[1]}'
-                                expr = f'({expr}{ops_comb[1]}{nums_perm[2]})' if j == 1 else f'{expr}{ops_comb[1]}{nums_perm[2]}'
-                                expr = f'({nums_perm[3]}{ops_comb[2]}{nums_perm[4]})' if l == 1 else f'{nums_perm[3]}{ops_comb[2]}{nums_perm[4]}'
-                                expr = f'({expr}{ops_comb[3]})' if k == 1 else f'{expr}{ops_comb[3]}'
-                                # Evaluate the expression and see if it equals g1.
-                                try:
-                                    result = eval(expr)
-                                    if result == goal:
-                                        return expr
-                                except:
-                                    pass
-            # Check if we have reached the maximum number of trials.
-            if len(exprs) >= max_trials:
-                break
-        if len(exprs) >= max_trials:
-            break
-    
-    # If no expression is found, return None.
+                                expr = f'({nums_perm[0]}{ops_comb[0]}{nums_perm[1]})' if i else f'{nums_perm[0]}{ops_comb[0]}{nums_perm[1]}'
+                                expr = f'{expr}{ops_comb[1]}({nums_perm[2]}{ops_comb[2]}{nums_perm[3]})' if j else f'{expr}{ops_comb[1]}{nums_perm[2]}{ops_comb[2]}{nums_perm[3]}'
+                                expr = f'({expr}){ops_comb[3]}{nums_perm[4]}' if l else f'{expr}{ops_comb[3]}{nums_perm[4]}'
+                                # Check that a number is not subtracted from itself.
+                                if '- ' not in expr and '-(' not in expr:
+                                    try:
+                                        result = eval(expr)
+                                        if result == g1:
+                                            return expr
+                                    except:
+                                        pass
+                                    # Check if we have reached the maximum number of trials.
+                                    if len(exprs) >= max_trials:
+                                        return None
     return None
 
 def find_cards_with_solution():

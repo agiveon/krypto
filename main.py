@@ -4,7 +4,7 @@ import numpy as np
 from google.oauth2 import service_account
 import random
 
-CARD_WIDTH = 15
+CARD_WIDTH = 100
 
 
 def display_cards(cards):
@@ -13,15 +13,15 @@ def display_cards(cards):
     col1, col2, col3, col4, col5 = st.columns(5)
     # Add a card to each column
     with col1:
-        st.image(f"cards/{cards[0]}.jpg", width="15%")
+        st.image(f"cards/{cards[0]}.jpg", use_column_width=True)
     with col2:
-        st.image(f"cards/{cards[1]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[1]}.jpg", use_column_width=True)
     with col3:
-        st.image(f"cards/{cards[2]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[2]}.jpg", use_column_width=True)
     with col4:
-        st.image(f"cards/{cards[3]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[3]}.jpg", use_column_width=True)
     with col5:
-        st.image(f"cards/{cards[4]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[4]}.jpg", use_column_width=True)
 
     st.write("")
     st.write("")
@@ -29,7 +29,7 @@ def display_cards(cards):
     # Add a card to each column
     col1, col2, col3, col4, col5 = st.columns(5)
     with col3:
-        st.image(f"cards/{cards[5]}.jpg", width=CARD_WIDTH)
+        st.image(f"cards/{cards[5]}.jpg", use_column_width=True)
 
 def pick_cards():
     # Create a list of cards with the specified probabilities

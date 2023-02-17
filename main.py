@@ -50,16 +50,41 @@ def pick_cards():
 #     cards = pick_cards()
 #     display_cards(cards)
 
-# Show button 1
-if st.button('Button 1'):
-    st.write('Hello 1')
+if "button1" not in st.session_state:
+    st.session_state["button1"] = False
 
-    # Show button 2
-    if st.button('Button 2'):
-        st.session_state.button2_clicked = True
+if "button2" not in st.session_state:
+    st.session_state["button2"] = False
 
-# Show "Hello 2" message if button 2 is clicked
-if st.session_state.get('button2_clicked', False):
-    st.write('Hello 2')
+if "button3" not in st.session_state:
+    st.session_state["button3"] = False
+
+if st.button("Button1"):
+    st.session_state["button1"] = not st.session_state["button1"]
+
+if st.session_state["button1"]:
+    if st.button("Button2"):
+        st.session_state["button2"] = not st.session_state["button2"]
+
+if st.session_state["button1"] and st.session_state["button2"]:
+    if st.button("Button3"):
+        # toggle button3 session state
+        st.session_state["button3"] = not st.session_state["button3"]
+
+if st.session_state["button3"]:
+    st.write("**Button3!!!**")
+
+
+# Print the session state to make it easier to see what's happening
+st.write(
+    f"""
+    ## Session state:
+    {st.session_state["button1"]=}
+
+    {st.session_state["button2"]=}
+
+    {st.session_state["button3"]=}
+    """
+)
 
 

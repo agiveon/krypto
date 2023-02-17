@@ -4,14 +4,8 @@ import numpy as np
 from google.oauth2 import service_account
 import random
 
-CARD_WIDTH = 100
+CARD_WIDTH = 0.15
 
-report_ctx = st.get_report_ctx()
-if report_ctx:
-    max_width = report_ctx.max_width
-    st.write("Client screen width:", max_width)
-else:
-    st.write("Not running on Streamlit")
 
 def display_cards(cards):
 

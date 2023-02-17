@@ -23,20 +23,13 @@ with col4:
 with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
-with st.container():
-    st.title("Last Card")
-    st.image("cards/1.jpg", width=CARD_WIDTH, use_column_width=False)
+# create a container for the image
+container = st.beta_container()
 
-    # Center the image using CSS
-    st.markdown(
-        """
-        <style>
-        .stImage > img {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+# add the image to the container
+with container:
+    st.image("cards/1.jpg", use_column_width=True)
+
+# center the container in the row
+
+st.beta_columns([1, 1, 1])[1].write(container)

@@ -87,7 +87,8 @@ def find_cards_with_solution():
     
     return cards,solution
 
-solution = None
+if "solution" not in st.session_state:
+    st.session_state["solution"] = None
 
 if "new_game" not in st.session_state:
     st.session_state["new_game"] = False
@@ -99,6 +100,7 @@ if st.button("new_game"):
     st.session_state["new_game"] = True
     st.session_state["show_solution"] = False
     cards,solution = find_cards_with_solution()
+    st.session_state["solution"] = solution
     st.session_state["cards"] = cards
     display_cards(cards)
 
@@ -107,7 +109,7 @@ if st.session_state["new_game"] and st.button("show_solution"):
     
 if st.session_state["new_game"] and st.session_state["show_solution"]:
     display_cards(st.session_state["cards"])
-    st.write(solution)
+    st.write(st.session_state["solution"])
 
 # Print the session state to make it easier to see what's happening
 # st.write(

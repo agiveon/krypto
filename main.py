@@ -65,23 +65,24 @@ def pick_cards():
 # if st.button('New cards'):
 #     st.experimental_rerun()
 
-if "button1" not in st.session_state:
-    st.session_state["button1"] = False
+if "new_game" not in st.session_state:
+    st.session_state["new_game"] = False
 
-if "button2" not in st.session_state:
-    st.session_state["button2"] = False
+if "show_solution" not in st.session_state:
+    st.session_state["show_solution"] = False
 
-if st.button("Button1"):
-    st.session_state["button1"] = True
-    st.session_state["button2"] = False
+if st.button("new_game"):
+    st.session_state["new_game"] = True
+    st.session_state["show_solution"] = False
     cards = pick_cards()
     display_cards(cards)
 
-if st.session_state["button1"] and st.button("Button2"):
-    st.session_state["button2"] = True
-
-if st.session_state["button1"] and st.session_state["button2"]:
-    st.write("**Button2!!!**")
+if st.session_state["new_game"] and st.button("show_solution"):
+    st.session_state["show_solution"] = True
+    
+if st.session_state["new_game"] and st.session_state["show_solution"]:
+    display_cards(cards)
+    st.write("SOLUTION GOES HERE")
 
 
 # Print the session state to make it easier to see what's happening

@@ -87,6 +87,7 @@ def find_cards_with_solution():
     
     return cards,solution
 
+solution = None
 
 if "new_game" not in st.session_state:
     st.session_state["new_game"] = False

@@ -23,7 +23,7 @@ with col4:
 with col5:
     st.image("cards/1.jpg", width=CARD_WIDTH)
 
-with st.beta_container():
+with st.container():
     st.title("Goal:")
     st.image("cards/1.jpg", width=CARD_WIDTH*2, use_column_width=False)
 

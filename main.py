@@ -49,7 +49,11 @@ deal_cards = st.button('New Cards')
 if deal_cards:
     cards = pick_cards()
     display_cards(cards)
-    give_up = st.button('I give up, show me the solution')
 
-if deal_cards and give_up:
-    st.write('solution goes here')
+# Show button 1
+if st.button('Button 1'):
+    st.write('Hello 1')
+
+    # Show button 2
+    if st.button('Button 2'):
+        st.write('Hello 2')

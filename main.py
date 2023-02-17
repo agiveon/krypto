@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 from google.oauth2 import service_account
 import random
-from streamlit.report_thread import get_report_ctx
-from streamlit.server.server import Server
 import SessionState
 
 CARD_WIDTH = 100

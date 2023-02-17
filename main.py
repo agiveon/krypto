@@ -44,42 +44,45 @@ def pick_cards():
     return random.sample(cards, 6)
 
 
+if st.button('Reload'):
+    st.experimental_rerun()
+
 # deal_cards = st.button('New Cards')
 
 # if deal_cards:
+cards = pick_cards()
+display_cards(cards)
+
+# if "button1" not in st.session_state:
+#     st.session_state["button1"] = False
+
+# if "button2" not in st.session_state:
+#     st.session_state["button2"] = False
+
+
+# if st.button("Button1"):
+#     st.session_state["button1"] = not st.session_state["button1"]
+
 #     cards = pick_cards()
 #     display_cards(cards)
 
-if "button1" not in st.session_state:
-    st.session_state["button1"] = False
+# if st.session_state["button1"]:
+#     if st.button("Button2"):
+#         st.session_state["button2"] = not st.session_state["button2"]
 
-if "button2" not in st.session_state:
-    st.session_state["button2"] = False
-
-
-if st.button("Button1"):
-    st.session_state["button1"] = not st.session_state["button1"]
-
-    cards = pick_cards()
-    display_cards(cards)
-
-if st.session_state["button1"]:
-    if st.button("Button2"):
-        st.session_state["button2"] = not st.session_state["button2"]
-
-if st.session_state["button2"] and st.session_state["button1"]:
-    st.write("**Button2!!!**")
+# if st.session_state["button2"] and st.session_state["button1"]:
+#     st.write("**Button2!!!**")
 
 
-# Print the session state to make it easier to see what's happening
-st.write(
-    f"""
-    ## Session state:
-    {st.session_state["button1"]=}
+# # Print the session state to make it easier to see what's happening
+# st.write(
+#     f"""
+#     ## Session state:
+#     {st.session_state["button1"]=}
 
-    {st.session_state["button2"]=}
+#     {st.session_state["button2"]=}
 
-    """
-)
+#     """
+# )
 
 

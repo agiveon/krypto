@@ -104,7 +104,7 @@ if "solution" not in st.session_state:
     st.session_state["solution"] = None
 
 if "new_game" not in st.session_state:
-    st.session_state["new_game"] = False
+    st.session_state["new_game"] = True
 
 if "show_solution" not in st.session_state:
     st.session_state["show_solution"] = False

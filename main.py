@@ -16,6 +16,9 @@ st.write('''<style>
 }
 </style>''', unsafe_allow_html=True)
 
+hide_img_fs = ''' <style> button[title="View fullscreen"]{ visibility: hidden;} </style> ''' 
+st.markdown(hide_img_fs, unsafe_allow_html=True)
+
 def display_cards(cards):
 
     st.subheader('Use all these cards:')

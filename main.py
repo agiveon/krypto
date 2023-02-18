@@ -42,10 +42,15 @@ def display_cards(cards):
 
 def pick_cards():
     # Create a list of cards with the specified probabilities
-    cards = [i for i in range(1, 11) for _ in range(3)]
-    cards += [i for i in range(11, 18) for _ in range(2)]
-    cards += [i for i in range(18, 25)]
-
+    if st.session_state["diff_level"] == 'Easy':
+        cards = [i for i in range(1, 11) for _ in range(3)]
+    if st.session_state["diff_level"] == 'Medium':
+        cards = [i for i in range(1, 11) for _ in range(3)]
+        cards += [i for i in range(11, 18) for _ in range(2)]
+    if st.session_state["diff_level"] == 'Hard':
+        cards = [i for i in range(1, 11) for _ in range(3)]
+        cards += [i for i in range(11, 18) for _ in range(2)]
+        cards += [i for i in range(18, 25)]
     # Shuffle the deck
     random.shuffle(cards)
 
@@ -108,6 +113,9 @@ if "new_game" not in st.session_state:
 
 if "show_solution" not in st.session_state:
     st.session_state["show_solution"] = False
+
+diff_level = st.select_slider('Select difficulty level',options=['Easy','Medium','Hard'])
+st.session_state["diff_level"] = diff_level
 
 if st.button("Start a new game!"):
     st.session_state["new_game"] = True

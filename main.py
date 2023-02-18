@@ -49,7 +49,7 @@ def pick_cards():
         cards = [i for i in range(1, 11) for _ in range(3)]
     if st.session_state["diff_level"] == 'Medium':
         cards = [i for i in range(1, 11) for _ in range(3)]
-        cards += [i for i in range(11, 18) for _ in range(2)]
+        cards += [i for i in range(11, 18)]
     if st.session_state["diff_level"] == 'Hard':
         cards = [i for i in range(1, 11) for _ in range(3)]
         cards += [i for i in range(11, 18) for _ in range(2)]

@@ -135,8 +135,8 @@ if st.button("Start a new game!"):
     st.session_state["show_solution"] = False
     
     sample_row = cards_solutions[st.session_state["diff_level"]].sample(n=1)
-    cards = sample_row['cards']
-    solution = sample_row['solution']
+    cards = sample_row['cards'].values[0]
+    solution = sample_row['solution'].values[0]
     
     # cards,solution = find_cards_with_solution(st.session_state["diff_level"])
     st.session_state["solution"] = solution

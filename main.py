@@ -88,9 +88,9 @@ def find_solution(cards, max_trials=1000):
                                         return None
     return None
 
-def find_cards_with_solution():
+def find_cards_with_solution(diff_level):
     while True:
-        cards = pick_cards(st.session_state["diff_level"])
+        cards = pick_cards(diff_level)
         solution = find_solution(cards)
         if solution != None:
           break
@@ -123,7 +123,7 @@ st.session_state["diff_level"] = diff_level
 if st.button("Start a new game!"):
     st.session_state["new_game"] = True
     st.session_state["show_solution"] = False
-    cards,solution = find_cards_with_solution()
+    cards,solution = find_cards_with_solution(st.session_state["diff_level"])
     st.session_state["solution"] = solution
     st.session_state["cards"] = cards
     display_cards(cards)

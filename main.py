@@ -93,13 +93,11 @@ st.title('KRYPTO')
 st.markdown("""
 <style>
 .rules-font {
-    font-size:12px !important;
+    font-size:13px !important;
 }
 </style>
 """, unsafe_allow_html=True)
-
-st.markdown('<p class="rules-font">Six cards are dealt. One card is designated !!</p>', unsafe_allow_html=True)
-# st.write("Six cards are dealt. One card is designated as the objective card. The object of the game is to combine all the remaining five cards in any order using any of basic four arithmetic functions so that the result equals the objective. All 5 cards must be used exactly once. Once you figure out the solution, you can ask for another set. Enjoy!")
+st.markdown('<p class="rules-font">Six cards are dealt. One card is designated as the objective card. The object of the game is to combine all the remaining five cards in any order using any of basic four arithmetic functions so that the result equals the objective. All 5 cards must be used exactly once. Once you figure out the solution, you can ask for another set. Enjoy!</p>', unsafe_allow_html=True)
 
 
 if "solution" not in st.session_state:

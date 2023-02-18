@@ -93,7 +93,7 @@ st.title('KRYPTO')
 st.markdown("""
 <style>
 .rules-font {
-    font-size:15px !important;
+    font-size:12px !important;
 }
 </style>
 """, unsafe_allow_html=True)

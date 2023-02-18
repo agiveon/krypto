@@ -49,7 +49,7 @@ def pick_cards(diff_label):
     if diff_label == 'Easy':
         cards = [i for i in range(1, 11) for _ in range(3)]
     if diff_label == 'Medium':
-        cards = [i for i in range(1, 11) for _ in range(3)]
+        cards = [i for i in range(1, 11) for _ in range(5)]
         cards += [i for i in range(11, 18)]
     if diff_label == 'Hard':
         cards = [i for i in range(1, 11) for _ in range(3)]

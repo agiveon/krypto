@@ -34,7 +34,7 @@ def display_cards(cards):
 
     st.write("")
     st.write("")
-    st.subheader('to reach the objective:')
+    st.subheader('Your objective is:')
     # Add a card to each column
     col1, col2, col3, col4, col5 = st.columns(5)
     with col3:

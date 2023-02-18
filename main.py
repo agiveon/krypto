@@ -115,7 +115,6 @@ if not st.session_state["new_game"] or st.button("Deal new cards!"):
     cards,solution = find_cards_with_solution()
     st.session_state["solution"] = solution
     st.session_state["cards"] = cards
-    st.write(cards)
     display_cards(cards)
 
 if st.session_state["new_game"] and st.button("I give up 😟 Show me the solution"):

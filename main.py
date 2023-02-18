@@ -43,14 +43,14 @@ def display_cards(cards):
     with col3:
         st.image(f"cards/{cards[5]}.jpg", use_column_width=True)
 
-def pick_cards():
+def pick_cards(diff_label):
     # Create a list of cards with the specified probabilities
-    if st.session_state["diff_level"] == 'Easy':
+    if diff_label == 'Easy':
         cards = [i for i in range(1, 11) for _ in range(3)]
-    if st.session_state["diff_level"] == 'Medium':
+    if diff_label == 'Medium':
         cards = [i for i in range(1, 11) for _ in range(3)]
         cards += [i for i in range(11, 18)]
-    if st.session_state["diff_level"] == 'Hard':
+    if diff_label == 'Hard':
         cards = [i for i in range(1, 11) for _ in range(3)]
         cards += [i for i in range(11, 18) for _ in range(2)]
         cards += [i for i in range(18, 25)]
@@ -90,7 +90,7 @@ def find_solution(cards, max_trials=1000):
 
 def find_cards_with_solution():
     while True:
-        cards = pick_cards()
+        cards = pick_cards(st.session_state["diff_level"])
         solution = find_solution(cards)
         if solution != None:
           break

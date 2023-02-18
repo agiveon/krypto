@@ -4,6 +4,7 @@ import numpy as np
 from google.oauth2 import service_account
 import random
 import itertools
+import pickle
 
 st.set_page_config(page_title="Krypto - The Math Game")
 
@@ -117,13 +118,25 @@ if "new_game" not in st.session_state:
 if "show_solution" not in st.session_state:
     st.session_state["show_solution"] = False
 
-diff_level = st.select_slider('Select difficulty level',options=['Easy','Medium','Hard'])
+diff_levels = ['Easy','Medium','Hard']
+
+cards_solutions = {}
+for dl in diff_levels:
+    with open(f'data/{dl}_cards_solutions.pkl', 'rb') as f:
+            df = pickle.load(f)
+    cards_solutions[dl] = df
+
+
+diff_level = st.select_slider('Select difficulty level',options=diff_levels)
 st.session_state["diff_level"] = diff_level
 
 if st.button("Start a new game!"):
     st.session_state["new_game"] = True
     st.session_state["show_solution"] = False
-    cards,solution = find_cards_with_solution(st.session_state["diff_level"])
+    sample_row = cards_solutions[st.session_state["diff_level"]].sample(n=1)
+    cards = sample_row['cards']
+    solution = sample_row['solution']
+    # cards,solution = find_cards_with_solution(st.session_state["diff_level"])
     st.session_state["solution"] = solution
     st.session_state["cards"] = cards
     display_cards(cards)

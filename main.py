@@ -104,12 +104,12 @@ if "solution" not in st.session_state:
     st.session_state["solution"] = None
 
 if "new_game" not in st.session_state:
-    st.session_state["new_game"] = True
+    st.session_state["new_game"] = False
 
 if "show_solution" not in st.session_state:
     st.session_state["show_solution"] = False
 
-if st.button("Deal new cards!"):
+if not st.session_state["new_game"] or st.button("Deal new cards!"):
     st.session_state["new_game"] = True
     st.session_state["show_solution"] = False
     cards,solution = find_cards_with_solution()

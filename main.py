@@ -90,7 +90,8 @@ def find_cards_with_solution():
     return cards,solution
 
 st.title('KRYPTO')
-st.write("Six cards are dealt: a common objective card at the top and five other cards below. Each player must use all five of the cards' numbers exactly once, using any combination of arithmetic operations (addition, subtraction, multiplication, and division), to form the objective card's number.")
+st.write("Six cards are dealt. One card is designated as the objective card. The object of the game is to combine all the remaining five cards in any order using any of basic four arithmetic functions so that the result equals the objective. All 5 cards must be used exactly once.")
+
 
 if "solution" not in st.session_state:
     st.session_state["solution"] = None
